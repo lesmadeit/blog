@@ -7,3 +7,4 @@ class Index(ListView):
     model = Article
     queryset = Article.objects.all().order_by('-date')
     template_name = 'blogapp/index.html'
+    paginate_by = 1
