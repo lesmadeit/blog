@@ -23,7 +23,7 @@
             <div class="my-3">
                 {{ object.content|truncatewords_html:50|safe }}
             </div>
-            <a href="#">Read More</a>
+            <a href="{% url 'detail_article' %}">Read More</a>
         </div>
     </div>
     {% endfor %}
@@ -35,6 +35,9 @@
                 {% if page_obj.has_previous %}
                     <li class="page-item">
                         <a class="page-link" href="?page=1">&laquo; First</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
                     </li>
                     
 
