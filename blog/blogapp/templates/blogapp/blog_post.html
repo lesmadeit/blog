@@ -33,16 +33,17 @@
             {% if liked_by_user %}
                 <form method="POST" action="{% url 'like_article' object.id %}">
                     {% csrf_token %}
-                    <button class="btn btn-outline-primary" >Unlike this post</button>
+                    <button class="btn btn-outline-primary" ><ion-icon name="heart-dislike-outline"></ion-icon>Unlike this post</button>
                 </form>
             {% else %}
                 <form method="POST" action="{% url 'like_article' object.id %}">
                     {% csrf_token %}
-                    <button class="btn btn-outline-primary" >Like this post</button>
+                    <button class="btn btn-outline-primary" ><ion-icon name="heart-outline"></ion-icon>
+                        Like this post</button>
                 </form>
             {% endif %}
         {% else %}
-            <button class="btm btn-outline-primary" disabled>Login to like this post</button>
+            <button class="btm btn-outline-primary" disabled><ion-icon name="heart-outline"></ion-icon>Login to like this post</button>
         {% endif %}
     </div>
 

@@ -10,6 +10,12 @@ class Index(ListView):
     template_name = 'blogapp/index.html'
     paginate_by = 1
 
+class Featured(ListView):
+    model = Article
+    queryset = Article.objects.filter(featured=True).order_by('-date')
+    template_name = 'blogapp/featured.html'
+    paginate_by = 1
+
 
 
 class DetailArticleView(DetailView):
