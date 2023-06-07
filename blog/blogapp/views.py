@@ -1,7 +1,9 @@
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, DeleteView
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Article
 
 class Index(ListView):
@@ -42,3 +44,13 @@ class LikeArticle(View):
 
         article.save()
         return redirect('detail_article', pk)
+    
+class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Article
+    template_name = 'blogapp/blog_delete.html'
+    success_url = reverse_lazy('index')
+
+
+    def test_func(self):
+        article = Article.objects.get(id=self.kwargs.get('pk'))
+        return self.request.user.id == article.author.id
