@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  {% load static %}
   <title> Blog</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="static/blogapp/img/favicon.png" rel="icon">
-  <link href="static/blogapp/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="{%  static 'blogapp/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,16 +19,16 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="static/blogapp/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/blogapp/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="static/blogapp/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="static/vendor/blogapp/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="static/blogapp/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{%  static 'blogapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{%  static 'blogapp/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{%  static 'blogapp/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{%  static 'blogapp/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{%  static 'blogapp/vendor/aos/aos.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS Files -->
-  <link href="static/blogapp/css/variables.css" rel="stylesheet">
-  <link href="static/blogapp/css/main.css" rel="stylesheet">
-  <link href="static/blogapp/css/custom.css" rel="stylesheet">
+  <link href="{%  static 'blogapp/css/variables.css' %}" rel="stylesheet">
+  <link href="{%  static 'blogapp/css/main.css' %}" rel="stylesheet">
+  
 
 
 
@@ -36,8 +36,7 @@
 
 <body>
 
-  {% block content %}
-  {% endblock content %}
+  
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -46,7 +45,7 @@
       <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>ZenBlog</h1>
+        <h1>Blog</h1>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -64,11 +63,9 @@
       </nav><!-- .navbar -->
 
       <div class="position-relative">
-        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
-        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
-        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
-
-        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <a href="https://web.facebook.com/young.leslee" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="https://x.com/lesmadeit" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="https://instagram.com/lesmadeit" class="mx-2"><span class="bi-instagram"></span></a>
         <i class="bi bi-list mobile-nav-toggle"></i>
 
         
@@ -81,64 +78,22 @@
 
   <main id="main">
 
+  {% block content %}
+  {% endblock content %}
+
    
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="footer-content">
-      <div class="container">
-
-        
-          
-          
-
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-legal">
-      <div class="container">
-
-        <div class="row justify-content-between">
-          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            <div class="copyright">
-            </div>
-
-          </div>
-
-          <div class="col-md-6">
-            <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-  </footer>
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+  
   <!-- Vendor JS Files -->
-  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="static/vendor/aos/aos.js"></script>
-  <script src="static/vendor/php-email-form/validate.js"></script>
+  <script src="{%  static 'blogapp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{%  static 'blogapp/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{%  static 'blogapp/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{%  static 'blogapp/vendor/aos/aos.js' %}"></script>
+  <script src="{%  static 'blogapp/vendor/php-email-form/validate.js' %}"></script>
 
   <!-- Template Main JS File -->
-  <script src="static/js/main.js"></script>
+  <script src="{% static 'blogapp/js/main.js' %}"></script>
 
 </body>
 
