@@ -3,6 +3,7 @@
 set -o errexit
 
 pip install -r requirements.txt
+cd blog
 
 python manage.py collectstatic --no-input
 
