@@ -135,6 +135,7 @@ REPOSITORY_ROOT = os.path.dirname(BASE_DIR)
 STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesSorage'
 
 
 
