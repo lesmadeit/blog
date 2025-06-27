@@ -133,9 +133,10 @@ USE_TZ = True
 REPOSITORY_ROOT = os.path.dirname(BASE_DIR)
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesSorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesSorage'
 
 
 
